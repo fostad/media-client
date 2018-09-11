@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 
-import Search from "./components/search";
+import Movies from "./components/Movies";
 import Movie from "./components/Movie";
 import Layout from "./components/Layout";
 
@@ -18,8 +18,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Layout >
-          <Route exact path='/' component={Search}/>
-          <Route exact path='/search' component={Search}/>
+          <Route exact path='/' component={Movies}/>
+          <Route exact path='/movies' component={Movies}/>
           <Route exact path='/movie' component={Movie}/>
         </Layout >
       </Switch>

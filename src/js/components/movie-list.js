@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateSettingByKey } from "../actions";
 
-const MovieList = ({
-  movies
-}) => {
+const MovieList = ({movies}) => {
   console.log('movies', movies);
-  console.log('movies.lenght', movies.length);
   return (
     <div style={{display: "flex", flexDirection: "column"}}>
       {
