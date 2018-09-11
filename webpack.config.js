@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
@@ -7,7 +8,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: [
+    './src/js/index.js'
+  ],
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
@@ -24,10 +27,11 @@ module.exports = {
       { test: /\.json$/, loader: "json-loader"},
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   },
   plugins: [
-    HtmlWebpackPluginConfig
+    HtmlWebpackPluginConfig,
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };

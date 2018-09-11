@@ -30,6 +30,12 @@ const getPopularMovies = () => {
     .then(r => r.results);
 };
 
+const getTopRateds = () => {
+  return _get('movie/top_rated')
+    .then(r => r.results);
+};
+
 module.exports = {
-  getPopularMovies
+  getPopularMovies,
+  getTopRateds
 };
